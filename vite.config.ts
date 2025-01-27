@@ -16,4 +16,5 @@ export default defineConfig({
       },
     },
   },
+  base: '/vitor-albergaria/',
 });
