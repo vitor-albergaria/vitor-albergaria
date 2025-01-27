@@ -13,7 +13,7 @@ export interface IAppContext {
 const AppContext = createContext<IAppContext | undefined>(undefined);
 
 const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [appTheme, setAppTheme] = useState<AppTheme>('light');
+  const [appTheme, setAppTheme] = useState<AppTheme>('ocean');
   const [appLanguage, setAppLanguage] = useState<string>('i18n_pt');
 
   useEffect(() => {
