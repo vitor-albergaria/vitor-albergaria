@@ -1,15 +1,14 @@
+import { t } from 'i18next';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useAppContext } from './hooks';
+import { useAppContext, useModal } from './hooks';
 import { Header, StyledThemeProvider } from 'shiba-ui-core';
 import { STORYBOOK_URL } from './utils/urls';
 import { Home } from './pages/Home';
 import { Footer } from './components/Footer';
 import { Particles } from './components/Particles';
-import { Modal } from './components/Modal';
-import { Settings } from './components/Settings';
-import { t } from 'i18next';
 import { About } from './pages/About';
+import { Settings } from './components/Settings';
 
 export type ActiveRoute = 'home' | 'about';
 
@@ -27,9 +26,7 @@ export const MainWrapper = styled.div`
 
 export const App: React.FC = () => {
   const { appTheme } = useAppContext();
-
-  const [showModal, setShowModal] = useState(false);
-  const toggleModal = () => setShowModal(!showModal);
+  const { openModal } = useModal();
 
   const [activeRoute, setActiveRoute] = useState<ActiveRoute>('home');
   const handleRouteChange = (route: ActiveRoute) => setActiveRoute(route);
@@ -40,7 +37,6 @@ export const App: React.FC = () => {
       label: t('home'),
       handleClick: () => handleRouteChange('home'),
     },
-
     {
       id: 2,
       label: t('about'),
@@ -56,7 +52,7 @@ export const App: React.FC = () => {
       id: 4,
       isInactive: true,
       label: t('settings'),
-      handleClick: toggleModal,
+      handleClick: () => openModal(<Settings toggle={() => openModal(null)} />),
     },
   ];
 
@@ -69,10 +65,6 @@ export const App: React.FC = () => {
         {activeRoute === 'home' && <Home />}
         {activeRoute === 'about' && <About />}
         <Footer />
-
-        <Modal show={showModal} toggle={toggleModal}>
-          <Settings toggle={toggleModal} />
-        </Modal>
       </MainWrapper>
     </StyledThemeProvider>
   );

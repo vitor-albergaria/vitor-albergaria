@@ -1,9 +1,9 @@
 import { t } from 'i18next';
-import React, { useState } from 'react';
+import React from 'react';
 import * as S from './styles';
 import * as Icons from '../../assets/icons';
 import { Button, TextDisplay } from 'shiba-ui-core';
-import { Modal } from '../../components/Modal';
+import { useModal } from '../../hooks';
 
 type IconType = keyof typeof Icons;
 
@@ -15,15 +15,7 @@ interface IHomeIcon {
 }
 
 export const Home: React.FC = () => {
-  const [showModal, setShowModal] = useState(false);
-  const toggleModal = () => setShowModal(!showModal);
-
-  const [modalContent, setModalContent] = useState<IHomeIcon>();
-
-  const openModal = ({ id, title, description }: IHomeIcon) => {
-    setModalContent({ id, title, description });
-    toggleModal();
-  };
+  const { openModal, closeModal } = useModal();
 
   const renderIcon = (iconId: string) => {
     const IconComponent = Icons[iconId as IconType];
@@ -95,42 +87,44 @@ export const Home: React.FC = () => {
     },
   ];
 
+  const openIconModal = (icon: IHomeIcon) => {
+    openModal(
+      <S.ModalContent>
+        <S.ModalRow>
+          {renderIcon(icon.id)}
+
+          <S.ModalTextWrapper>
+            <TextDisplay text={icon.title} weight='strong' />
+            <TextDisplay text={icon.description} />
+          </S.ModalTextWrapper>
+        </S.ModalRow>
+
+        <Button
+          text={t('action_close')}
+          background='error'
+          onClick={closeModal}
+          height={30}
+          isFullWidth
+        />
+      </S.ModalContent>
+    );
+  };
+
   return (
     <S.MainWrapper>
       <S.HomeText>{HOME_TITLE}</S.HomeText>
 
       <S.IconsWrapper>
-        {HOME_ICONS.map(({ id, title, reverse, description }) => (
+        {HOME_ICONS.map((icon) => (
           <S.Icon
-            key={id}
-            $reverse={reverse}
-            onClick={() => openModal({ id, title, description })}
+            key={icon.id}
+            $reverse={icon.reverse}
+            onClick={() => openIconModal(icon)}
           >
-            {renderIcon(id)} {/* Usando a função renderIcon */}
+            {renderIcon(icon.id)}
           </S.Icon>
         ))}
       </S.IconsWrapper>
-
-      <Modal show={showModal} toggle={toggleModal}>
-        <S.ModalContent>
-          <S.ModalRow>
-            {renderIcon(modalContent?.id || '-')}
-
-            <S.ModalTextWrapper>
-              <TextDisplay text={modalContent?.title || '-'} weight='strong' />
-              <TextDisplay text={modalContent?.description || '-'} />
-            </S.ModalTextWrapper>
-          </S.ModalRow>
-
-          <Button
-            text={t('action_close')}
-            background='error'
-            onClick={toggleModal}
-            height={30}
-            isFullWidth
-          />
-        </S.ModalContent>
-      </Modal>
     </S.MainWrapper>
   );
 };
