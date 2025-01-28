@@ -5,7 +5,7 @@ export const MainWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: clamp(8px, 2vw, 16px);
+  row-gap: clamp(12px, 2vw, 16px);
   position: relative;
 `;
 
@@ -33,8 +33,8 @@ export const Icon = styled.div<{
   transition: transform 0.2s ease;
 
   svg {
-    width: clamp(30px, 5vw, 50px);
-    height: clamp(30px, 5vw, 50px);
+    width: clamp(32px, 5vw, 50px);
+    height: clamp(32px, 5vw, 50px);
   }
 
   &:hover {
