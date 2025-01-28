@@ -7,7 +7,7 @@ import { AppTheme } from '../../context/AppProvider';
 import { AmericaIcon, BrazilFlagIcon } from '../../assets/icons';
 
 export const Settings: React.FC<{ toggle: () => void }> = ({ toggle }) => {
-  const { appTheme, setAppTheme, appLanguage, setAppLanguage } =
+  const { appTheme, handleSetAppTheme, appLanguage, handleSetAppLanguage } =
     useAppContext();
 
   const themes: AppTheme[] = ['light', 'dark', 'ocean'];
@@ -23,7 +23,7 @@ export const Settings: React.FC<{ toggle: () => void }> = ({ toggle }) => {
             <S.SelectorOption
               key={language}
               $isActive={appLanguage === language}
-              onClick={() => setAppLanguage(language)}
+              onClick={() => handleSetAppLanguage(language)}
             >
               {language === 'i18n_pt' ? <BrazilFlagIcon /> : <AmericaIcon />}
 
@@ -45,7 +45,7 @@ export const Settings: React.FC<{ toggle: () => void }> = ({ toggle }) => {
             <S.SelectorOption
               key={theme}
               $isActive={appTheme === theme}
-              onClick={() => setAppTheme(theme)}
+              onClick={() => handleSetAppTheme(theme)}
             >
               <TextDisplay
                 text={theme.charAt(0).toUpperCase() + theme.slice(1)}
