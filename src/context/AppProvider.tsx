@@ -5,16 +5,43 @@ export type AppTheme = 'light' | 'dark' | 'ocean';
 
 export interface IAppContext {
   appTheme: AppTheme;
-  setAppTheme: (theme: AppTheme) => void;
+  handleSetAppTheme: (theme: AppTheme) => void;
   appLanguage: string;
-  setAppLanguage: (language: string) => void;
+  handleSetAppLanguage: (language: string) => void;
+  showModal: boolean;
+  handleOpenModal: (content: ReactNode) => void;
+  modalContent: React.ReactNode;
+  handleCloseModal: () => void;
 }
 
 const AppContext = createContext<IAppContext | undefined>(undefined);
 
 const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState<ReactNode>(null);
+
   const [appTheme, setAppTheme] = useState<AppTheme>('ocean');
   const [appLanguage, setAppLanguage] = useState<string>('i18n_pt');
+
+  const handleOpenModal = (content: ReactNode) => {
+    setModalContent(content);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const handleSetAppTheme = (newTheme: AppTheme) => {
+    setAppTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  };
+
+  const handleSetAppLanguage = (newLanguage: string) => {
+    setAppLanguage(newLanguage);
+    localStorage.setItem('language', newLanguage);
+    i18n.changeLanguage(newLanguage.replace('i18n_', ''));
+  };
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as AppTheme | null;
@@ -35,24 +62,17 @@ const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     }
   }, []);
 
-  const handleSetAppTheme = (newTheme: AppTheme) => {
-    setAppTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-  };
-
-  const handleSetAppLanguage = (newLanguage: string) => {
-    setAppLanguage(newLanguage);
-    localStorage.setItem('language', newLanguage);
-    i18n.changeLanguage(newLanguage.replace('i18n_', ''));
-  };
-
   return (
     <AppContext.Provider
       value={{
         appTheme,
-        setAppTheme: handleSetAppTheme,
+        handleSetAppTheme,
         appLanguage,
-        setAppLanguage: handleSetAppLanguage,
+        handleSetAppLanguage,
+        showModal,
+        handleCloseModal,
+        modalContent,
+        handleOpenModal,
       }}
     >
       {children}

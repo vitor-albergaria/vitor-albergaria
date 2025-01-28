@@ -3,7 +3,7 @@ import React from 'react';
 import * as S from './styles';
 import * as Icons from '../../assets/icons';
 import { Button, TextDisplay } from 'shiba-ui-core';
-import { useModal } from '../../hooks';
+import { useAppContext } from '../../hooks';
 
 type IconType = keyof typeof Icons;
 
@@ -15,7 +15,7 @@ interface IHomeIcon {
 }
 
 export const Home: React.FC = () => {
-  const { openModal, closeModal } = useModal();
+  const { handleOpenModal, handleCloseModal } = useAppContext();
 
   const renderIcon = (iconId: string) => {
     const IconComponent = Icons[iconId as IconType];
@@ -88,7 +88,7 @@ export const Home: React.FC = () => {
   ];
 
   const openIconModal = (icon: IHomeIcon) => {
-    openModal(
+    handleOpenModal(
       <S.ModalContent>
         <S.ModalRow>
           {renderIcon(icon.id)}
@@ -102,7 +102,7 @@ export const Home: React.FC = () => {
         <Button
           text={t('action_close')}
           background='error'
-          onClick={closeModal}
+          onClick={handleCloseModal}
           height={30}
           isFullWidth
         />
