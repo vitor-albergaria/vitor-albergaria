@@ -153,11 +153,11 @@ import{i as A,a as e,B as g,r as B,j as t,d as i,t as n,b as o,n as C,c as s,f a
   min-width: 250px;
   max-width: 800px;
   background: ${({theme:A})=>A.color.background};
-`,z=i.div`
+`,u=i.div`
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-`,u=(A,e,g="pt")=>{const B="pt"===g?["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"]:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],t=new Date(A),i="now"===e?new Date:new Date(e),n=B[t.getMonth()],o=t.getFullYear(),C=B[i.getMonth()],s=i.getFullYear(),r=`${n} de ${o}`,c="now"===e?"pt"===g?"o momento":"present":`${C} de ${s}`;let Q=12*(s-o)+(i.getMonth()-t.getMonth())+1;const w=Math.floor(Q/12),E=Q%12;let a="";return w>0&&E>0?a="pt"===g?`${w} ${w>1?"anos":"ano"} e ${E} ${E>1?"meses":"mês"}`:`${w} ${w>1?"years":"year"} and ${E} ${E>1?"months":"month"}`:w>0?a="pt"===g?`${w} ${w>1?"anos":"ano"}`:`${w} ${w>1?"years":"year"}`:E>0&&(a="pt"===g?`${E} ${E>1?"meses":"mês"}`:`${E} ${E>1?"months":"month"}`),`${r} - ${c} · ${a}`},y=[{id:1,title:"mid_level_title",subtitle:["01/01/2024","now"],details:["mid_level_desc_1","mid_level_desc_2","mid_level_desc_3","mid_level_desc_4"]},{id:2,title:"junior_title",subtitle:["04/01/2023","12/31/2023"],details:["junior_desc_1","junior_desc_2","junior_desc_3","junior_desc_4"]},{id:3,title:"trainee_title",subtitle:["11/01/2022","03/31/2023"],details:["trainee_desc_1","trainee_desc_2","trainee_desc_3","trainee_desc_4"]}],U={core:["HTML","CSS","JavaScript","TypeScript"],webDevelopment:["React.js","React Router DOM","Vite"],mobileDevelopment:["React Native","React Navigation","React Native Reanimated","AsyncStorage","React Native CLI","Expo"],common:["Storybook","React Query","Context API","React Testing Library","Jest","Styled-components","Sass","Git","i18next"]},T=()=>{const{appLanguage:A}=l(),e="i18n_pt"===A?"pt":"en",g=A=>t.jsx(z,{children:U[A].map((A=>t.jsx(o.Badge,{text:A},A)))});return t.jsxs(L,{children:[t.jsxs(b,{children:[t.jsx(o.TextDisplay,{text:n("experience"),size:"2x",weight:"bold"}),t.jsx(o.Timeline,{data:y.map((A=>({id:A.id,title:n(A.title),subtitle:`EVT · ${u(A.subtitle[0],A.subtitle[1],e)}`,details:A.details.map((A=>n(A)))})))})]}),t.jsxs(b,{children:[t.jsx(o.TextDisplay,{text:n("skills"),size:"2x",weight:"bold"}),t.jsx(o.TextDisplay,{text:"Core",weight:"strong"}),g("core"),t.jsx(o.TextDisplay,{text:n("web_development"),weight:"strong"}),g("webDevelopment"),t.jsx(o.TextDisplay,{text:n("mobile_development"),weight:"strong"}),g("mobileDevelopment"),t.jsx(o.TextDisplay,{text:n("common"),weight:"strong"}),g("common")]})]})},J=i.div`
+`,z=(A,e,g="pt")=>{const B="pt"===g?["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"]:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],t=new Date(A),i="now"===e?new Date:new Date(e),n=B[t.getMonth()],o=t.getFullYear(),C=B[i.getMonth()],s=i.getFullYear(),r=`${n} de ${o}`,c="now"===e?"pt"===g?"o momento":"present":`${C} de ${s}`;let Q=12*(s-o)+(i.getMonth()-t.getMonth())+1;const w=Math.floor(Q/12),E=Q%12;let a="";return w>0&&E>0?a="pt"===g?`${w} ${w>1?"anos":"ano"} e ${E} ${E>1?"meses":"mês"}`:`${w} ${w>1?"years":"year"} and ${E} ${E>1?"months":"month"}`:w>0?a="pt"===g?`${w} ${w>1?"anos":"ano"}`:`${w} ${w>1?"years":"year"}`:E>0&&(a="pt"===g?`${E} ${E>1?"meses":"mês"}`:`${E} ${E>1?"months":"month"}`),`${r} - ${c} · ${a}`},y=[{id:1,title:"mid_level_title",subtitle:["01/01/2024","now"],details:["mid_level_desc_1","mid_level_desc_2","mid_level_desc_3","mid_level_desc_4"]},{id:2,title:"junior_title",subtitle:["04/01/2023","12/31/2023"],details:["junior_desc_1","junior_desc_2","junior_desc_3","junior_desc_4"]},{id:3,title:"trainee_title",subtitle:["11/01/2022","03/31/2023"],details:["trainee_desc_1","trainee_desc_2","trainee_desc_3","trainee_desc_4"]}],U={core:["HTML","CSS","JavaScript","TypeScript"],webDevelopment:["React.js","React Router DOM","Vite"],mobileDevelopment:["React Native","React Navigation","React Native Reanimated","AsyncStorage","React Native CLI","Expo"],common:["Storybook","React Query","Context API","React Testing Library","Jest","Styled-components","Sass","Git","i18next"]},T=()=>{const{appLanguage:A}=l(),e="i18n_pt"===A?"pt":"en",g=A=>t.jsx(u,{children:U[A].map((A=>t.jsx(o.Badge,{text:A},A)))});return t.jsxs(L,{children:[t.jsxs(b,{children:[t.jsx(o.TextDisplay,{text:n("experience"),size:"2x",weight:"bold"}),t.jsx(o.Timeline,{data:y.map((A=>({id:A.id,title:n(A.title),subtitle:`EVT · ${z(A.subtitle[0],A.subtitle[1],e)}`,details:A.details.map((A=>n(A)))})))})]}),t.jsxs(b,{children:[t.jsx(o.TextDisplay,{text:n("skills"),size:"2x",weight:"bold"}),t.jsx(o.TextDisplay,{text:"Core",weight:"strong"}),g("core"),t.jsx(o.TextDisplay,{text:n("web_development"),weight:"strong"}),g("webDevelopment"),t.jsx(o.TextDisplay,{text:n("mobile_development"),weight:"strong"}),g("mobileDevelopment"),t.jsx(o.TextDisplay,{text:n("common"),weight:"strong"}),g("common")]})]})},J=i.div`
   display: flex;
   flex-direction: column;
   row-gap: 28px;
@@ -206,11 +206,13 @@ import{i as A,a as e,B as g,r as B,j as t,d as i,t as n,b as o,n as C,c as s,f a
   background-color: ${({theme:A})=>A.color.highlight};
   margin: 10px 0;
 `;const S=({toggle:A})=>{const{appTheme:e,handleSetAppTheme:g,appLanguage:B,handleSetAppLanguage:i}=l();return t.jsxs(J,{children:[t.jsxs(N,{children:[t.jsx(o.TextDisplay,{text:n("change_language"),weight:"strong"}),t.jsx(X,{children:["i18n_pt","i18n_en"].map((A=>t.jsxs(K,{$isActive:B===A,onClick:()=>i(A),children:["i18n_pt"===A?t.jsx(x,{}):t.jsx(j,{}),t.jsx(o.TextDisplay,{text:n(A),weight:"strong",color:B===A?"textDefault":"content"})]},A)))})]}),t.jsxs(N,{children:[t.jsx(o.TextDisplay,{text:n("change_theme"),weight:"strong"}),t.jsx(X,{children:["light","dark","ocean"].map((A=>t.jsx(K,{$isActive:e===A,onClick:()=>g(A),children:t.jsx(o.TextDisplay,{text:A.charAt(0).toUpperCase()+A.slice(1),weight:"strong",color:e===A?"textDefault":"content"})},A)))})]}),t.jsx(o.Button,{text:n("action_close"),background:"error",onClick:A,height:30,isFullWidth:!0})]})},Z=i.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
-  height: 100%;
+  height: 100dvh;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
@@ -223,10 +225,11 @@ import{i as A,a as e,B as g,r as B,j as t,d as i,t as n,b as o,n as C,c as s,f a
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  height: 100vh;
+  height: 100dvh;
   background: ${({theme:A})=>A.color.background};
   z-index: 1;
-
   overflow-y: auto;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  -webkit-touch-callout: none;
 `,V=()=>{const{appTheme:A,handleCloseModal:e,handleOpenModal:g}=l(),[i,C]=B.useState("home"),s=A=>C(A),r=[{id:1,label:n("home"),handleClick:()=>s("home")},{id:2,label:n("about"),handleClick:()=>s("about")},{id:3,isInactive:!0,label:n("library"),handleClick:()=>window.open("https://vitor-albergaria.github.io/shiba-ui-core/","_blank")},{id:4,isInactive:!0,label:n("settings"),handleClick:()=>{g(t.jsx(S,{toggle:e}))}}];return t.jsxs(o.StyledThemeProvider,{themeVariant:A,children:[t.jsx(O,{}),t.jsxs(R,{children:[t.jsx(o.Header,{logo:"Vitor Albergaria",menuItems:r}),"home"===i&&t.jsx(Y,{}),"about"===i&&t.jsx(T,{}),t.jsx(F,{})]}),t.jsx(W,{})]})};Q.createRoot(document.getElementById("root")).render(t.jsx(B.StrictMode,{children:t.jsx(a,{children:t.jsx(V,{})})}));
