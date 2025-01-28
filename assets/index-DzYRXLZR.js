@@ -3,7 +3,7 @@ import{i as A,a as e,B as g,r as B,j as t,d as i,t as n,b as o,n as C,c as s,f a
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: clamp(8px, 2vw, 16px);
+  row-gap: clamp(12px, 2vw, 16px);
   position: relative;
 `,D=i.div`
   cursor: pointer;
@@ -23,8 +23,8 @@ import{i as A,a as e,B as g,r as B,j as t,d as i,t as n,b as o,n as C,c as s,f a
   transition: transform 0.2s ease;
 
   svg {
-    width: clamp(30px, 5vw, 50px);
-    height: clamp(30px, 5vw, 50px);
+    width: clamp(32px, 5vw, 50px);
+    height: clamp(32px, 5vw, 50px);
   }
 
   &:hover {
@@ -225,11 +225,14 @@ import{i as A,a as e,B as g,r as B,j as t,d as i,t as n,b as o,n as C,c as s,f a
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   height: 100dvh;
-  background: ${({theme:A})=>A.color.background};
-  z-index: 1;
   overflow-y: auto;
-  -webkit-tap-highlight-color: transparent;
+  background: ${({theme:A})=>A.color.background};
+
   outline: none;
   -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+
+  z-index: 1;
 `,V=()=>{const{appTheme:A,handleCloseModal:e,handleOpenModal:g}=l(),[i,C]=B.useState("home"),s=A=>C(A),r=[{id:1,label:n("home"),handleClick:()=>s("home")},{id:2,label:n("about"),handleClick:()=>s("about")},{id:3,isInactive:!0,label:n("library"),handleClick:()=>window.open("https://vitor-albergaria.github.io/shiba-ui-core/","_blank")},{id:4,isInactive:!0,label:n("settings"),handleClick:()=>{g(t.jsx(S,{toggle:e}))}}];return t.jsxs(o.StyledThemeProvider,{themeVariant:A,children:[t.jsx(O,{}),t.jsxs(R,{children:[t.jsx(o.Header,{logo:"Vitor Albergaria",menuItems:r}),"home"===i&&t.jsx(Y,{}),"about"===i&&t.jsx(T,{}),t.jsx(F,{})]}),t.jsx(W,{})]})};Q.createRoot(document.getElementById("root")).render(t.jsx(B.StrictMode,{children:t.jsx(a,{children:t.jsx(V,{})})}));
