@@ -1,4 +1,13 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeInOut = keyframes`
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+;`;
 
 export const MainWrapper = styled.div`
   display: flex;
@@ -7,6 +16,8 @@ export const MainWrapper = styled.div`
   align-items: center;
   row-gap: clamp(12px, 2vw, 16px);
   position: relative;
+
+  animation: ${fadeInOut} 0.8s ease-in-out forwards;
 `;
 
 export const IconsWrapper = styled.div`

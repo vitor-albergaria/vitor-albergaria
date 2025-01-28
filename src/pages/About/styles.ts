@@ -1,4 +1,13 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeInOut = keyframes`
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+;`;
 
 export const AboutContainer = styled.div`
   display: flex;
@@ -26,6 +35,7 @@ export const AboutContainer = styled.div`
 
   scrollbar-width: thin;
   scrollbar-color: ${({ theme }) => theme.color.highlight} transparent;
+  animation: ${fadeInOut} 0.8s ease-in-out forwards;
 `;
 
 export const SectionWrapper = styled.div`
