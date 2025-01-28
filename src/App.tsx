@@ -17,12 +17,13 @@ export const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  height: 100vh;
+  height: 100dvh;
   background: ${({ theme }) => theme.color.background};
   z-index: 1;
-
   overflow-y: auto;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  -webkit-touch-callout: none;
 `;
 
 export const App: React.FC = () => {
