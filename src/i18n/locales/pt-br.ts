@@ -26,34 +26,18 @@ export const pt = {
     web_development: 'Desenvolvimento Web',
     mobile_development: 'Desenvolvimento Mobile',
     common: 'Ferramentas e Bibliotecas',
-    mid_level_title: 'Desenvolvedor Front-End | Pleno',
-    mid_level_desc_1:
-      'Arquitetei e implementei a base do projeto mobile (React Native) com design system, biblioteca de componentes core, context, hooks, internacionalização e integração com Realm.',
-    mid_level_desc_2:
-      'Desenvolvi funcionalidades críticas em mobile/web garantindo alta performance e escalabilidade.',
-    mid_level_desc_3:
-      'Atuei em múltiplos projetos liderando refatorações e implementações de novos fluxos.',
-    mid_level_desc_4:
-      'Colaborei ativamente em code reviews e pair programming, contribuindo com documentação de padrões.',
-
-    junior_title: 'Desenvolvedor Front-End | Júnior',
-    junior_desc_1:
-      'Desenvolvi integrações robustas com MongoDB e Realm, implementando operações CRUD e regras de negócio complexas.',
-    junior_desc_2:
-      'Implementei melhorias significativas de performance através de otimizações de renderização e requisições.',
-    junior_desc_3:
-      'Contribuí com code reviews e na implementação de boas práticas de desenvolvimento.',
-    junior_desc_4:
-      'Desenvolvi features completas incluindo validações, tratamento de erros e testes unitários.',
-
-    trainee_title: 'Desenvolvedor Front-End | Trainee',
-    trainee_desc_1:
-      'Desenvolvi funcionalidades front-end com React, TypeScript, Styled-Components e integração com APIs RESTful.',
-    trainee_desc_2:
-      'Implementei interfaces responsivas seguindo princípios de UI/UX e design system da empresa.',
-    trainee_desc_3:
-      'Participei ativamente no desenvolvimento de features com foco em acessibilidade e performance.',
-    trainee_desc_4:
-      'Contribuí em projetos utilizando Git/GitHub, incluindo criação de PRs e resolução de conflitos.',
+    evt_title: 'Desenvolvedor Front End',
+    evt_desc_1:
+      'Atuo com front-end (React.js, React Native) e back-end (Node.js, MongoDB), além de realizar code reviews, garantir boas práticas de desenvolvimento e contribuir para a qualidade e padronização do código nas equipes.',
+    evt_desc_2:
+      'Participei de diversos projetos, desenvolvendo e mantendo aplicações web e mobile, passando por diferentes stacks e arquiteturas. Trabalhei com refatoração, otimização de código, integrações e melhorias de performance, garantindo usabilidade, escalabilidade e manutenção eficiente.',
+    evt_desc_3:
+      'Na BASF, contribui para um sistema de gestão de vendas integrado entre web e mobile, utilizando monorepo para compartilhamento de código. Participei da estruturação inicial, definição de arquitetura, otimização de consultas em MongoDB/Realm e criação de componentes reutilizáveis.',
+    evt_desc_4:
+      'No Alldocs, refatorei um dos principais fluxos do sistema, melhorando a performance e experiência do usuário. Reestruturei o gerenciamento de estado com React Query + Redux, otimizando cache e requisições.',
+    evt_desc_5:
+      'Na Coca-Cola, atuo no desenvolvimento e manutenção de um aplicativo mobile interno usado por vendedores para acompanhar vendas, metas e métricas. Implemento novas funcionalidades, otimizo integrações e melhoro a estrutura do código para garantir melhor reutilização e escalabilidade.',
+    evt_desc_6:
+      'Na Natura, sou responsável pela manutenção e evolução de um sistema interno, corrigindo bugs, refatorando código e ajustando integrações. Também otimizo consultas no banco de dados e implemento melhorias para maior eficiência e usabilidade.',
   },
 };

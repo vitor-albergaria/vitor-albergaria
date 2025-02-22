@@ -1,35 +1,15 @@
 export const EXPERIENCE = [
   {
     id: 1,
-    title: 'mid_level_title',
-    subtitle: ['01/01/2024', 'now'],
+    title: 'evt_title',
+    subtitle: ['11/01/2022', 'now'],
     details: [
-      'mid_level_desc_1',
-      'mid_level_desc_2',
-      'mid_level_desc_3',
-      'mid_level_desc_4',
-    ],
-  },
-  {
-    id: 2,
-    title: 'junior_title',
-    subtitle: ['04/01/2023', '12/31/2023'],
-    details: [
-      'junior_desc_1',
-      'junior_desc_2',
-      'junior_desc_3',
-      'junior_desc_4',
-    ],
-  },
-  {
-    id: 3,
-    title: 'trainee_title',
-    subtitle: ['11/01/2022', '03/31/2023'],
-    details: [
-      'trainee_desc_1',
-      'trainee_desc_2',
-      'trainee_desc_3',
-      'trainee_desc_4',
+      'evt_desc_1',
+      'evt_desc_2',
+      'evt_desc_3',
+      'evt_desc_4',
+      'evt_desc_5',
+      'evt_desc_6',
     ],
   },
 ];

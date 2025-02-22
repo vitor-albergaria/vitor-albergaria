@@ -13,10 +13,13 @@ export const AboutContainer = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: clamp(24px, 2vw, 32px);
   position: relative;
-  flex: 1;
   gap: 32px 128px;
+  flex: 1;
+
+  padding: clamp(24px, 2vw, 32px);
+  margin-top: clamp(24px, 5vw, 120px);
+
   flex-wrap: wrap;
   overflow-y: auto;
 
