@@ -143,7 +143,7 @@ import{i as A,a as e,B as g,r as B,j as t,m as i,d as n,t as o,b as C,n as s,c a
   flex: 1;
 
   padding: clamp(24px, 2vw, 32px);
-  margin-top: clamp(24px, 5vw, 120px);
+  margin-top: clamp(24px, 5vw, 60px);
 
   flex-wrap: wrap;
   overflow-y: auto;
