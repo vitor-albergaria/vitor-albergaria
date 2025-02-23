@@ -18,7 +18,7 @@ export const AboutContainer = styled.div`
   flex: 1;
 
   padding: clamp(24px, 2vw, 32px);
-  margin-top: clamp(24px, 5vw, 120px);
+  margin-top: clamp(24px, 5vw, 60px);
 
   flex-wrap: wrap;
   overflow-y: auto;
