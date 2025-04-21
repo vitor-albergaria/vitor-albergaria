@@ -1,4 +1,4 @@
-![Banner](https://github.com/vitor-albergaria/vitor-albergaria/blob/main/src/assets/images/banner.png)
+![Banner](https://github.com/vitor-albergaria/vitor-albergaria/blob/main/assets/images/banner.png)
 
 
 <div align="center">
